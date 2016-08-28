@@ -75,15 +75,8 @@ bool GetDisabled(IBusEngine *engine) {
   return disabled;
 }
 
-// Some users expect that Mozc is turned off by default on IBus 1.5.0 and later.
-// https://github.com/google/mozc/issues/201
-// On IBus 1.4.x, IBus expects that an IME should always be turned on and
-// IME on/off keys are handled by IBus itself rather than each IME.
-#if IBUS_CHECK_VERSION(1, 5, 0)
-const bool kActivatedOnLaunch = false;
-#else
+//Use hiragana as default
 const bool kActivatedOnLaunch = true;
-#endif  // IBus>=1.5.0
 
 }  // namespace
 
